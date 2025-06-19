@@ -10,8 +10,16 @@ x-app: &default-app
 
 volumes:
   db_data: null
+  redis_data: null
 
 services:
+  redis:
+    image: redis:alpine
+    container_name: conquistadores-cache
+    volumes:
+      - redis_data:/data
+    env_file: .env
+
   postgres:
     image: postgres:alpine
     container_name: conquistadores-database
@@ -40,7 +48,7 @@ services:
       watch:
         - action: sync
           path: .
-          target: /src
+          target: /app
           ignore:
             - .venv/
         - action: rebuild
