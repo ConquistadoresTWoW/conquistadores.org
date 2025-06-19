@@ -1,0 +1,22 @@
+{% load static i18n %}
+<section id="home" class="hero-section">
+  <div class="hero-overlay">
+    <div class="container">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <h1 class="display-2 fw-bold mb-4 guild-title">Conquistadores</h1>
+          <p class="lead mb-4">
+            {% translate 'Hermandad 100% Hispana' %}| Turtle WoW
+          </p>
+          <p class="fs-5 mb-5">
+            {% translate 'Forjados en la batalla, unidos en la victoria. Únete a las leyendas que forjan el destino de Azeroth.' %}
+          </p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="#recruitment" class="btn btn-primary btn-lg"><i class="fas fa-users me-2"></i>{% translate 'Únete a la Conquista' %}</a>
+            <a href="#about" class="btn btn-outline-light btn-lg"><i class="fas fa-info-circle me-2"></i>{% translate 'Saber más' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

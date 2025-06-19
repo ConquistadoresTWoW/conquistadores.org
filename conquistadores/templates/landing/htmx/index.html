@@ -1,21 +1,16 @@
 {% load static i18n %}
 
 {% block content %}
-  <section id="home" class="hero-section">
-    <div class="hero-overlay">
-      <div class="container">
-        <div class="row align-items-center min-vh-100">
-          <div class="col-lg-8 mx-auto text-center text-white">
-            <h1 class="display-2 fw-bold mb-4 guild-title">Shadowmoon Legends</h1>
-            <p class="lead mb-4">Elite Alliance Guild | Stormrage Server</p>
-            <p class="fs-5 mb-5">Forged in battle, united in victory. Join the legends who shape Azeroth's destiny.</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-              <a href="#recruitment" class="btn btn-primary btn-lg"><i class="fas fa-users me-2"></i>Join Our Ranks</a>
-              <a href="#about" class="btn btn-outline-light btn-lg"><i class="fas fa-info-circle me-2"></i>Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include "landing/htmx/partials/home.html" %}
+  {% include "landing/htmx/partials/about.html" %}
+  {% include "landing/htmx/partials/calendar.html" %}
+  {% include "landing/htmx/partials/gallery.html" %}
+  {% include "landing/htmx/partials/recruitment.html" %}
+  {% include "landing/htmx/partials/rules.html" %}
+  {% include "landing/htmx/partials/loot.html" %}
+  {% include "landing/htmx/partials/contact.html" %}
+
+  
+  
+  
 {% endblock %}

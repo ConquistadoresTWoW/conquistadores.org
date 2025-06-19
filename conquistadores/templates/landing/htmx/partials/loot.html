@@ -1,0 +1,129 @@
+{% load static i18n %}
+<section id="loot" class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5">
+        <h2 class="display-4 mb-4 section-title">Loot System</h2>
+        <p class="lead">Fair and transparent loot distribution for all members</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="card bg-secondary">
+          <div class="card-header">
+            <h4 class="mb-0 text-warning">EPGP System (Effort Points / Gear Points)</h4>
+          </div>
+          <div class="card-body">
+            <h5>How It Works:</h5>
+            <ul>
+              <li>
+                <strong>Effort Points (EP):</strong> Earned through raid attendance, being on time, and guild contributions
+              </li>
+              <li>
+                <strong>Gear Points (GP):</strong> Accumulated when receiving loot based on item value
+              </li>
+              <li>
+                <strong>Priority Ratio:</strong> EP/GP determines loot priority (higher ratio = higher priority)
+              </li>
+            </ul>
+
+            <h5 class="mt-4">EP Awards:</h5>
+            <div class="row">
+              <div class="col-md-6">
+                <ul>
+                  <li>Raid Attendance: 100 EP</li>
+                  <li>On Time Bonus: 25 EP</li>
+                  <li>First Kill Bonus: 50 EP</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Guild Bank Donation: 10-50 EP</li>
+                  <li>Helping with M+: 25 EP</li>
+                  <li>Officer Duties: 100 EP/week</li>
+                </ul>
+              </div>
+            </div>
+
+            <h5 class="mt-4">GP Values:</h5>
+            <div class="table-responsive">
+              <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th>Item Type</th>
+                    <th>Normal</th>
+                    <th>Heroic</th>
+                    <th>Mythic</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Weapons/Trinkets</td>
+                    <td>100 GP</td>
+                    <td>200 GP</td>
+                    <td>400 GP</td>
+                  </tr>
+                  <tr>
+                    <td>Armor (Main Pieces)</td>
+                    <td>75 GP</td>
+                    <td>150 GP</td>
+                    <td>300 GP</td>
+                  </tr>
+                  <tr>
+                    <td>Accessories</td>
+                    <td>50 GP</td>
+                    <td>100 GP</td>
+                    <td>200 GP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card bg-primary">
+          <div class="card-body">
+            <h5>Loot Rules</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-check me-2"></i>Main spec before off spec
+              </li>
+              <li>
+                <i class="fas fa-check me-2"></i>Raiders before socials
+              </li>
+              <li>
+                <i class="fas fa-check me-2"></i>No loot hoarding
+              </li>
+              <li>
+                <i class="fas fa-check me-2"></i>Tier sets prioritized
+              </li>
+              <li>
+                <i class="fas fa-check me-2"></i>Weapons distributed fairly
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card bg-success mt-4">
+          <div class="card-body">
+            <h5>Special Cases</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-star me-2"></i>New members start with base EP
+              </li>
+              <li>
+                <i class="fas fa-star me-2"></i>Trials can receive loot after core team
+              </li>
+              <li>
+                <i class="fas fa-star me-2"></i>GP decay: 10% weekly
+              </li>
+              <li>
+                <i class="fas fa-star me-2"></i>EP decay: 5% weekly
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
