@@ -1,3 +1,5 @@
+from apps.landing.models import AboutUs, AboutUsCard
 from django.contrib import admin
 
-# Register your models here.
+admin.site.register(AboutUsCard)
+admin.site.register(AboutUs)
