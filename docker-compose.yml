@@ -1,0 +1,47 @@
+x-app: &default-app
+  build:
+    context: .
+    dockerfile: dev.Dockerfile
+  volumes:
+    - ./conquistadores:/app/conquistadores
+  env_file: .env
+  working_dir: /app/conquistadores
+  restart: unless-stopped
+
+volumes:
+  db_data: null
+
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: conquistadores-database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    env_file: .env
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: conquistadores-mailserver
+    ports:
+      - 8025:8025
+    env_file: .env
+
+  web:
+    <<: *default-app
+    image: conquistadores-web
+    container_name: conquistadores-web
+    command: /start
+    entrypoint: /entrypoint
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /src
+          ignore:
+            - .venv/
+        - action: rebuild
+          path: ./pyproject.toml
