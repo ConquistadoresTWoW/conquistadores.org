@@ -38,9 +38,11 @@ THIRD_PARTY_APPS = [
     "django_htmx",
     "crispy_forms",
     "crispy_bootstrap5",
+    "django_apscheduler",
+    "imagefield",
 ]
 
-LOCAL_APPS = ["apps.landing"]
+LOCAL_APPS = ["apps.landing", "apps.events"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
