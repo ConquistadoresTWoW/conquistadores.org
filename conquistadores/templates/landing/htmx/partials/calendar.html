@@ -3,53 +3,28 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center mb-5">
-        <h2 class="display-4 mb-4 section-title">Upcoming Events</h2>
-        <p class="lead">Stay updated with our raid schedule and guild activities</p>
+        <h2 class="display-4 mb-4 section-title">{% translate "Próximos Eventos" %}</h2>
+        <p class="lead">{% translate "Manténgase actualizado con nuestro calendario de incursiones y actividades de la hermandad." %}</p>
       </div>
     </div>
     <div class="row g-4">
       <div class="col-lg-6">
         <div class="card border-primary">
           <div class="card-header bg-primary text-white">
-            <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>This Week's Schedule</h5>
+            <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>{% translate "Próximos Eventos" %}</h5>
           </div>
           <div class="card-body">
-            <div class="event-item mb-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1">Mythic Raid Night</h6>
-                  <small class="text-muted">Tuesday, 8:00 PM - 11:00 PM EST</small>
+            {% for event in events %}
+              <div class="event-item mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-1">{{ event.raid_id }}</h6>
+                    <small class="text-muted">{{ event.start_time }}</small>
+                  </div>
+                  <a href="https://raidres.fly.dev/res/{{event.reference}}" target="_blank"><span class="badge bg-success">{{ event.signups }}</span></a>
                 </div>
-                <span class="badge bg-danger">Mythic</span>
               </div>
-            </div>
-            <div class="event-item mb-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1">Heroic Farm Run</h6>
-                  <small class="text-muted">Thursday, 8:00 PM - 10:30 PM EST</small>
-                </div>
-                <span class="badge bg-warning">Heroic</span>
-              </div>
-            </div>
-            <div class="event-item mb-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1">M+ Push Night</h6>
-                  <small class="text-muted">Saturday, 7:00 PM - 11:00 PM EST</small>
-                </div>
-                <span class="badge bg-success">M+</span>
-              </div>
-            </div>
-            <div class="event-item">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1">Guild Social Event</h6>
-                  <small class="text-muted">Sunday, 6:00 PM - 8:00 PM EST</small>
-                </div>
-                <span class="badge bg-info">Social</span>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -59,21 +34,18 @@
             <h5 class="mb-0"><i class="fas fa-star me-2"></i>Special Events</h5>
           </div>
           <div class="card-body">
-            <div class="event-item mb-3">
-              <h6 class="mb-1">Guild Achievement Run</h6>
-              <p class="mb-1">Join us for old content achievement hunting!</p>
-              <small class="text-muted">Next Saturday, 3:00 PM EST</small>
-            </div>
-            <div class="event-item mb-3">
-              <h6 class="mb-1">New Member Welcome Event</h6>
-              <p class="mb-1">Meet and greet with our newest guild members.</p>
-              <small class="text-muted">Every first Sunday of the month</small>
-            </div>
-            <div class="event-item">
-              <h6 class="mb-1">PvP Tournament</h6>
-              <p class="mb-1">Internal guild PvP competition with prizes!</p>
-              <small class="text-muted">Monthly event - TBA</small>
-            </div>
+            {% for event in special_events %}
+              <div class="event-item mb-3">
+                <h6 class="mb-1">{{ event.name }}</h6>
+                {% if event.description %}
+                  <p class="mb-1">{{ event.description }}</p>
+                {% endif %}
+                {% if event.url %}
+                  <p class="mb-1"><a href="">{{ event.url }}</a></p>
+                {% endif %}
+                <small class="text-muted">{{ event.date }}</small>
+              </div>
+            {% endfor %}
           </div>
         </div>
       </div>
