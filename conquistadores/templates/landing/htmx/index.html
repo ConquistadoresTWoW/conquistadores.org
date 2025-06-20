@@ -6,7 +6,9 @@
     {% include "landing/htmx/partials/about.html" %}
   {% endif %}
   {% include "landing/htmx/partials/calendar.html" %}
-  {% include "landing/htmx/partials/gallery.html" %}
+  {% if gallery %}
+    {% include "landing/htmx/partials/gallery.html" %}
+  {% endif %}
   {% include "landing/htmx/partials/recruitment.html" %}
   {% include "landing/htmx/partials/rules.html" %}
   {% include "landing/htmx/partials/loot.html" %}
