@@ -1,7 +1,7 @@
 from typing import Any
 
 from apps.events.models import Events, SpecialEvents
-from apps.landing.models import AboutUs
+from apps.landing.models import AboutUs, Gallery
 from django.utils import timezone
 from django.views.generic import TemplateView
 from helpers.mixins import HxTemplateMixin
@@ -24,6 +24,7 @@ class IndexView(HxTemplateMixin, TemplateView):
                 "special_events": SpecialEvents.objects.filter(
                     date__gte=timezone.now()
                 ),
+                "gallery": Gallery.objects.last(),
             }
         )
         return context
