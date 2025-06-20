@@ -53,3 +53,13 @@ services:
             - .venv/
         - action: rebuild
           path: ./pyproject.toml
+
+  apscheduler:
+    <<: *default-app
+    image: conquistadores-web
+    container_name: conquistadores-apscheduler
+    depends_on:
+      - postgres
+    ports: []
+    command: ["uv", "run", "python", "manage.py", "runapscheduler"]
+    env_file: .env
