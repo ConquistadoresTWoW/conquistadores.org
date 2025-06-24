@@ -1,86 +1,78 @@
 {% load static i18n %}
-<section id="rules" class="py-5 bg-light">
+<section id="rules" class="py-5 bg-wow-dark text-wow-cream">
   <div class="container">
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">📜 Código Pirata 📜</h2>
     <div class="row">
-      <div class="col-lg-8 mx-auto text-center mb-5">
-        <h2 class="display-4 mb-4 section-title">Guild Rules</h2>
-        <p class="lead">Guidelines that keep our community strong and respectful</p>
-      </div>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <div class="card h-100">
-          <div class="card-header bg-warning text-dark">
-            <h5 class="mb-0"><i class="fas fa-comments me-2"></i>Communication Rules</h5>
+      <div class="col-lg-8 mx-auto fade-in">
+        <div class="accordion" id="rulesAccordion">
+          <div class="accordion-item border-wow-green" style="border-width: 3px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button pirate-subtitle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse1">Honor Entre Ladrones</button>
+            </h2>
+            <div id="collapse1"
+                 class="accordion-collapse collapse show"
+                 data-bs-parent="#rulesAccordion">
+              <div class="accordion-body">
+                Todo <strong>Conquistador</strong> debe comportarse con honor hacia sus compañeros de tripulación.
+                No toleramos el acoso, la discriminación o comportamientos tóxicos.
+                Mantenemos un ambiente de <em>respeto mutuo</em> y camaradería pirata.
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <ol>
-              <li>Treat all members with respect and courtesy</li>
-              <li>No harassment, discrimination, or toxic behavior</li>
-              <li>Keep guild chat appropriate for all ages</li>
-              <li>Use Discord for raid communication</li>
-              <li>English is the primary language in guild chat</li>
-              <li>No spamming or excessive use of caps</li>
-            </ol>
+          <div class="accordion-item border-wow-green" style="border-width: 3px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed pirate-subtitle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse2">Compromiso de Expedición</button>
+            </h2>
+            <div id="collapse2"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#rulesAccordion">
+              <div class="accordion-body">
+                Los piratas deben mantener al menos 85% de asistencia a las expediciones programadas.
+                Inscríbete con anticipación y notifica a los oficiales sobre ausencias.
+                Ven preparado con <em>consumibles, reparaciones</em> y conocimiento de los encuentros.
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card h-100">
-          <div class="card-header bg-danger text-white">
-            <h5 class="mb-0"><i class="fas fa-sword me-2"></i>Raid Rules</h5>
+          <div class="accordion-item border-wow-green" style="border-width: 3px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed pirate-subtitle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse3">Comunicación de la Tripulación</button>
+            </h2>
+            <div id="collapse3"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#rulesAccordion">
+              <div class="accordion-body">
+                Discord es <strong>obligatorio</strong> para todas las actividades de la hermandad.
+                Mantén comunicación clara durante las expediciones y sigue las instrucciones del capitán.
+                Usa los canales apropiados y mantén los canales de voz despejados durante los combates.
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <ol>
-              <li>Be online 15 minutes before raid start</li>
-              <li>Come prepared with consumables and repairs</li>
-              <li>Maintain 85% attendance rate</li>
-              <li>Follow raid leader instructions</li>
-              <li>No rage quitting during progression</li>
-              <li>Constructive feedback only during breaks</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card h-100">
-          <div class="card-header bg-success text-white">
-            <h5 class="mb-0"><i class="fas fa-handshake me-2"></i>General Conduct</h5>
-          </div>
-          <div class="card-body">
-            <ol>
-              <li>Represent the guild positively in all interactions</li>
-              <li>Help fellow guild members when possible</li>
-              <li>No ninja looting or scamming</li>
-              <li>Inactive for 30+ days without notice = removal</li>
-              <li>Alt characters must be disclosed to officers</li>
-              <li>Follow Blizzard's Terms of Service</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card h-100">
-          <div class="card-header bg-info text-white">
-            <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Consequences</h5>
-          </div>
-          <div class="card-body">
-            <ol>
-              <li>
-                <strong>First Offense:</strong> Verbal warning
-              </li>
-              <li>
-                <strong>Second Offense:</strong> Written warning + temp suspension
-              </li>
-              <li>
-                <strong>Third Offense:</strong> Guild removal
-              </li>
-              <li>
-                <strong>Severe Cases:</strong> Immediate removal
-              </li>
-              <li>Appeals can be made to guild leadership</li>
-              <li>All decisions are final after appeal process</li>
-            </ol>
+          <div class="accordion-item border-wow-green" style="border-width: 3px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed pirate-subtitle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse4">Reparto del Botín</button>
+            </h2>
+            <div id="collapse4"
+                 class="accordion-collapse collapse"
+                 data-bs-parent="#rulesAccordion">
+              <div class="accordion-body">
+                Sigue nuestro sistema de DKP con <em>honor e integridad</em>.
+                No se tolera el robo de botín o dramas relacionados.
+                Los oficiales tienen autoridad final en todas las decisiones de botín.
+                <strong>Especialización principal</strong> siempre tiene prioridad sobre secundaria.
+              </div>
+            </div>
           </div>
         </div>
       </div>

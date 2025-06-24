@@ -1,20 +1,26 @@
 {% load static i18n %}
-<section id="home" class="hero-section">
-  <div class="hero-overlay">
-    <div class="container">
-      <div class="row align-items-center min-vh-100">
-        <div class="col-lg-8 mx-auto text-center text-white">
-          <h1 class="display-2 fw-bold mb-4 guild-title">Conquistadores</h1>
-          <p class="lead mb-4">
-            {% translate 'Hermandad 100% Hispana' %}| Turtle WoW
-          </p>
-          <p class="fs-5 mb-5">
-            {% translate 'Forjados en la batalla, unidos en la victoria. Únete a las leyendas que forjan el destino de Azeroth.' %}
-          </p>
-          <div class="d-flex gap-3 justify-content-center flex-wrap">
-            <a href="#recruitment" class="btn btn-primary btn-lg"><i class="fas fa-users me-2"></i>{% translate 'Únete a la Conquista' %}</a>
-            <a href="#about" class="btn btn-outline-light btn-lg"><i class="fas fa-info-circle me-2"></i>{% translate 'Saber más' %}</a>
-          </div>
+<section id="home"
+         class="hero-section d-flex align-items-center justify-content-center text-center text-white position-relative">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative z-index-2">
+    <div class="row">
+      <div class="col-lg-8 mx-auto fade-in">
+        <h1 class="display-2 fw-bold mb-4 text-shadow pirate-title"
+            style="color: var(--wow-gold)">CONQUISTADORES</h1>
+        <p class="lead mb-4 fs-3 pirate-subtitle text-wow-cream">
+          <span class="spanish-accent">Hermandad Pirata</span> • Turtle WoW Europe (Nordanaar) 
+        </p>
+        <p class="mb-5 fs-5 text-wow-cream">
+          <em>"Navegamos los mares de Azeroth en busca de gloria y tesoros. ¡Únete a nuestra tripulación!"</em>
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="#recruitment"
+             class="btn btn-wow-primary btn-lg px-4 py-2 ship-decoration glow-green">
+            <i data-lucide="users" class="me-2"></i>
+            ¡Únete a la Tripulación!
+          </a>
+          <a href="#about"
+             class="btn btn-wow-secondary btn-lg px-4 py-2 glow-orange">Conoce Nuestra Historia</a>
         </div>
       </div>
     </div>

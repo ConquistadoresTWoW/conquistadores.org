@@ -1,51 +1,75 @@
 {% load static i18n %}
-<section id="calendar" class="py-5">
+<section id="events" class="py-5 bg-wow-secondary text-wow-cream">
   <div class="container">
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">
+      🏴‍☠️ Próximas Expediciones 🏴‍☠️
+    </h2>
     <div class="row">
-      <div class="col-lg-8 mx-auto text-center mb-5">
-        <h2 class="display-4 mb-4 section-title">{% translate "Próximos Eventos" %}</h2>
-        <p class="lead">{% translate "Manténgase actualizado con nuestro calendario de incursiones y actividades de la hermandad." %}</p>
-      </div>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <div class="card border-primary">
-          <div class="card-header bg-primary text-white">
-            <h5 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>{% translate "Próximos Eventos" %}</h5>
-          </div>
+      <div class="col-lg-6 mb-4 fade-in">
+        <div class="card card-wow-dark h-100 border-wow-green ship-decoration">
           <div class="card-body">
-            {% for event in events %}
-              <div class="event-item mb-3">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6 class="mb-1">{{ event.raid_id }}</h6>
-                    <small class="text-muted">{{ event.start_time }}</small>
-                  </div>
-                  <a href="https://raidres.fly.dev/res/{{event.reference}}" target="_blank"><span class="badge bg-success">{{ event.signups }}</span></a>
-                </div>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="card-title text-wow-green pirate-subtitle">Asalto Mítico Semanal</h5>
+                <p class="card-text">Conquista de Amirdrassil</p>
               </div>
-            {% endfor %}
+              <i data-lucide="calendar" class="text-wow-green"></i>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">28 Dic a las 21:00 (Hora Servidor)</small>
+              <span class="badge badge-wow-raid">ASALTO</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="card border-success">
-          <div class="card-header bg-success text-white">
-            <h5 class="mb-0"><i class="fas fa-star me-2"></i>Special Events</h5>
-          </div>
+      <div class="col-lg-6 mb-4 fade-in">
+        <div class="card card-wow-dark h-100 border-wow-green ship-decoration">
           <div class="card-body">
-            {% for event in special_events %}
-              <div class="event-item mb-3">
-                <h6 class="mb-1">{{ event.name }}</h6>
-                {% if event.description %}
-                  <p class="mb-1">{{ event.description }}</p>
-                {% endif %}
-                {% if event.url %}
-                  <p class="mb-1"><a href="">{{ event.url }}</a></p>
-                {% endif %}
-                <small class="text-muted">{{ event.date }}</small>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="card-title text-wow-green pirate-subtitle">Expedición M+</h5>
+                <p class="card-text">Búsqueda del Tesoro Semanal</p>
               </div>
-            {% endfor %}
+              <i data-lucide="calendar" class="text-wow-green"></i>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">29 Dic a las 20:30 (Hora Servidor)</small>
+              <span class="badge badge-wow-mythic">MÍTICO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4 fade-in">
+        <div class="card card-wow-dark h-100 border-wow-green ship-decoration">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="card-title text-wow-green pirate-subtitle">Batalla Naval</h5>
+                <p class="card-text">Combate JcJ de la Hermandad</p>
+              </div>
+              <i data-lucide="calendar" class="text-wow-green"></i>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">30 Dic a las 19:00 (Hora Servidor)</small>
+              <span class="badge badge-wow-pvp">JCJ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4 fade-in">
+        <div class="card card-wow-dark h-100 border-wow-green ship-decoration">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h5 class="card-title text-wow-green pirate-subtitle">Fiesta de Año Nuevo</h5>
+                <p class="card-text">Celebración Especial</p>
+              </div>
+              <i data-lucide="calendar" class="text-wow-green"></i>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-muted">2 Ene a las 21:00 (Hora Servidor)</small>
+              <span class="badge badge-wow-special">ESPECIAL</span>
+            </div>
           </div>
         </div>
       </div>

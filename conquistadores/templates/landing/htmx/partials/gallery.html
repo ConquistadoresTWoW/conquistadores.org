@@ -1,24 +1,88 @@
 {% load static i18n %}
-<section id="gallery" class="py-5 bg-dark">
+<section id="gallery" class="py-5 bg-wow-dark text-wow-cream">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center mb-5">
-        <h2 class="display-4 mb-4 section-title text-light">{% translate "Galería de Imágenes" %}</h2>
-        <p class="lead text-light">{{ gallery.description }}</p>
-      </div>
-    </div>
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">📸 Galería de Conquistas 📸</h2>
     <div class="row g-4">
-      {% for gallery in gallery.images.all %}
-        <div class="col-lg-4 col-md-6">
-          <div class="gallery-item">
-            <img src="{{ gallery.image.thumb }}" class="img-fluid rounded" alt="{{ gallery.name }}" />
-            <div class="gallery-overlay">
-              <h5>{{ gallery.name }}</h5>
-              <p>{{ gallery.caption }}</p>
-            </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Victoria Épica">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Victoria Épica</small>
           </div>
         </div>
-      {% endfor %}
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Reunión de Piratas">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Reunión de Piratas</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Dominio Naval">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Dominio Naval</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Asalto Exitoso">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Asalto Exitoso</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Tesoro Conquistado">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Tesoro Conquistado</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Batalla Legendaria">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Batalla Legendaria</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Celebración">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Celebración</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+        <div class="card bg-transparent border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=300&h=200&fit=crop"
+               class="gallery-img"
+               alt="Botín Épico">
+          <div class="card-body p-2 text-center">
+            <small class="text-wow-green fw-bold pirate-subtitle">Botín Épico</small>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
