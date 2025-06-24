@@ -23,10 +23,23 @@ class Raids(BaseModel):
 
 
 class Events(BaseTimeStampedModel):
+    class EventType(models.TextChoices):
+        RAID = "R", ("Raid")
+        PVP = "P", ("PVP")
+        SPECIAL = "E", ("Especial")
+
     raid_id = models.ForeignKey(
         Raids, on_delete=models.CASCADE, related_name="events"
     )
     event_id = models.IntegerField(verbose_name="ID", default=0)
+    TYPE = models.CharField(
+        verbose_name="Tipo de Evento",
+        max_length=1,
+        choices=EventType,
+        default=EventType.RAID,
+        blank=True,
+        null=True,
+    )
     reference = models.CharField(
         verbose_name="Referencia", max_length=6, db_index=True
     )
@@ -50,21 +63,3 @@ class Events(BaseTimeStampedModel):
 
     def __str__(self):
         return self.reference
-
-
-class SpecialEvents(BaseTimeStampedModel):
-    name = models.CharField(verbose_name="Nombre", max_length=150)
-    description = models.CharField(
-        verbose_name="Descripción", max_length=250, blank=True, null=True
-    )
-    date = models.DateTimeField(verbose_name="Fecha")
-    url = models.URLField(
-        verbose_name="Discord URL", max_length=250, blank=True, null=True
-    )
-
-    class Meta:
-        verbose_name = "Evento Especial"
-        verbose_name_plural = "Eventos Especiales"
-
-    def __str__(self):
-        return self.name
