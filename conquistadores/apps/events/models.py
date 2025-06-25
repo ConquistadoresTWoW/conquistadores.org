@@ -32,7 +32,7 @@ class Events(BaseTimeStampedModel):
         Raids, on_delete=models.CASCADE, related_name="events"
     )
     event_id = models.IntegerField(verbose_name="ID", default=0)
-    TYPE = models.CharField(
+    type = models.CharField(
         verbose_name="Tipo de Evento",
         max_length=1,
         choices=EventType,
@@ -60,6 +60,7 @@ class Events(BaseTimeStampedModel):
     class Meta:
         verbose_name = "Evento"
         verbose_name_plural = "Eventos"
+        ordering = ["start_time"]
 
     def __str__(self):
         return self.reference
