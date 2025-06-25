@@ -2,8 +2,6 @@ from .base import *  # noqa: F403
 
 DEBUG = True
 
-SECRET_KEY = env("SECRET_KEY")  # noqa: F405
-
 ALLOWED_HOSTS = ["*"]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

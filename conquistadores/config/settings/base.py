@@ -17,9 +17,7 @@ SITE_ID = 1
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
-SECRET_KEY = (
-    "django-insecure-9dc@ig21v&r$eq_c7m6w3re2#b0p(xy9w5u@ywd_&_=2fupkt7"
-)
+SECRET_KEY = env("SECRET_KEY")
 
 APPS_DIR = BASE_DIR / "apps"
 
