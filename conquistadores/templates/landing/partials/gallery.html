@@ -1,7 +1,9 @@
 {% load static i18n %}
 <section id="gallery" class="py-5 bg-wow-dark text-wow-cream">
   <div class="container">
-    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">📸 Galería de Conquistas 📸</h2>
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">
+      <i class="fa-solid fa-camera-retro me-2"></i> {% translate "Galería de Conquistas" %} <i class="fa-solid fa-camera-retro me-2"></i>
+    </h2>
     <div class="row g-4">
       {% for pic in gallery.images.all %}
         <div class="col-lg-3 col-md-4 col-sm-6 fade-in">

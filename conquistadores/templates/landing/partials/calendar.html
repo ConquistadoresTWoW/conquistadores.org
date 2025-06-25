@@ -2,7 +2,7 @@
 <section id="events" class="py-5 bg-wow-secondary text-wow-cream">
   <div class="container">
     <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">
-      🏴‍☠️ {% translate "Próximas Expediciones" %} 🏴‍☠️
+      <i class="fa-regular fa-flag me-2"></i><i class="fa-solid fa-skull-crossbones me-2"></i> {% translate "Próximas Expediciones" %} <i class="fa-solid fa-skull-crossbones me-2"></i><i class="fa-regular fa-flag me-2"></i>
     </h2>
     <div class="row">
       {% for event in events %}
@@ -17,10 +17,12 @@
                     <h5 class="card-title text-wow-green pirate-subtitle">{% trans "Evento Especial" %}</h5>
                   {% endif %}
                   <p class="card-text">
-                    <a href="https://raidres.fly.dev/res/{{ event.reference }}" target="_blank" rel="noopener noreferrer">{{ event.raid_id }} - ( {{ event.signups }} / {{ event.raid_id.max_attendance }} )</a>
+                    <a href="https://raidres.fly.dev/res/{{ event.reference }}"
+                       target="_blank"
+                       rel="noopener noreferrer">{{ event.raid_id }} - ( {{ event.signups }} / {{ event.raid_id.max_attendance }} )</a>
                   </p>
                 </div>
-                <i data-lucide="calendar" class="text-wow-green"></i>
+                <i class="fa-regular fa-calendar-days me-2"></i>
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <small class="text-white">{{ event.start_time }}</small>

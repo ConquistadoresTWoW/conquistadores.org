@@ -5,10 +5,10 @@
   <div class="container position-relative z-index-2">
     <div class="row">
       <div class="col-lg-8 mx-auto fade-in">
-        <h1 class="display-2 fw-bold mb-4 text-shadow pirate-title"
-            style="color: var(--wow-gold)">{{ guild.name|upper }}</h1>
+        <img class="d-block mx-auto mb-4" src="{% static "images/logo.png" %}" alt="" width="100" height="100">
+        <h1 class="display-2 fw-bold mb-4 text-shadow pirate-title h1-gold">{{ guild.name|upper }}</h1>
         <p class="lead mb-4 fs-3 pirate-subtitle text-wow-cream">
-          <span class="spanish-accent">{{ guild.description }}</span> • {{ guild.server }} 
+          <span class="spanish-accent">{{ guild.description }}</span> • {{ guild.server }}
         </p>
         <p class="mb-5 fs-5 text-wow-cream">
           <em>{{ guild.slogan }}</em>
@@ -16,11 +16,11 @@
         <div class="d-flex gap-3 justify-content-center flex-wrap">
           <a href="#recruitment"
              class="btn btn-wow-primary btn-lg px-4 py-2 ship-decoration glow-green">
-            <i data-lucide="users" class="me-2"></i>
+            <i class="fa-solid fa-users me-2"></i>
             {% translate "¡Únete a la Tripulación!" %}
           </a>
           <a href="#about"
-             class="btn btn-wow-secondary btn-lg px-4 py-2 glow-orange">{% translate "Conoce Nuestra Historia" %}</a>
+             class="btn btn-wow-secondary btn-lg px-4 py-2 glow-orange"><i class="fa-brands fa-readme me-2"></i>{% translate "Conoce Nuestra Historia" %}</a>
         </div>
       </div>
     </div>
