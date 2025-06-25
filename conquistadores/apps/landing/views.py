@@ -1,21 +1,21 @@
 from typing import Any
 
 from apps.events.models import Events
-from apps.guild.models import LootSystem, Recruitment, Rules
+from apps.guild.models import Guild, LootSystem, Recruitment, Rules
 from apps.landing.models import Gallery
 from django.utils import timezone
 from django.views.generic import TemplateView
-from helpers.mixins import HxTemplateMixin
 
 
-class IndexView(HxTemplateMixin, TemplateView):
-    template_name = "landing/htmx/index.html"
+class IndexView(TemplateView):
+    template_name = "landing/index.html"
 
     def get_context_data(self, **kwargs) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context.update(
             {
                 "title": "Inicio",
+                "guild": Guild.objects.last(),
                 "events": Events.objects.filter(
                     start_time__gte=timezone.now()
                 ),
