@@ -86,7 +86,6 @@ dependencies = [
     { name = "django-ckeditor-5" },
     { name = "django-environ" },
     { name = "django-extensions" },
-    { name = "django-htmx" },
     { name = "django-imagefield" },
     { name = "django-jazzmin" },
     { name = "httpx" },
@@ -112,7 +111,6 @@ requires-dist = [
     { name = "django-ckeditor-5", specifier = ">=0.2.18" },
     { name = "django-environ", specifier = ">=0.12.0" },
     { name = "django-extensions", specifier = ">=4.1" },
-    { name = "django-htmx", specifier = ">=1.23.0" },
     { name = "django-imagefield", specifier = ">=0.22.0" },
     { name = "django-jazzmin", specifier = ">=3.0.1" },
     { name = "httpx", specifier = ">=0.28.1" },
@@ -250,19 +248,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6d/b3/ed0f54ed706ec0b54fd251cc0364a249c6cd6c6ec97f04dc34be5e929eac/django_extensions-4.1.tar.gz", hash = "sha256:7b70a4d28e9b840f44694e3f7feb54f55d495f8b3fa6c5c0e5e12bcb2aa3cdeb", size = 283078, upload-time = "2025-04-11T01:15:39.617Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/64/96/d967ca440d6a8e3861120f51985d8e5aec79b9a8bdda16041206adfe7adc/django_extensions-4.1-py3-none-any.whl", hash = "sha256:0699a7af28f2523bf8db309a80278519362cd4b6e1fd0a8cd4bf063e1e023336", size = 232980, upload-time = "2025-04-11T01:15:37.701Z" },
-]
-
-[[package]]
-name = "django-htmx"
-version = "1.23.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "asgiref" },
-    { name = "django" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/9c/3a/ef8857b5fbd56c140c0b552100968a7d78f025019520e0f68b24a6a5556e/django_htmx-1.23.1.tar.gz", hash = "sha256:6a23ee1e74f54a28eca4ccb48191a585529fbad5cbd5b5c3d8ec1a16b8557090", size = 64256, upload-time = "2025-06-21T22:33:45.814Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f2/90/885aac4159be37926e38b8797fd9f2c102289271cfbcabf6f8d29bf12a3f/django_htmx-1.23.1-py3-none-any.whl", hash = "sha256:45febb80d2e85ee1da01dca61429d6f835ef176949cda4ecc5ae2e729d2ff53d", size = 61446, upload-time = "2025-06-21T22:33:44.26Z" },
 ]
 
 [[package]]
