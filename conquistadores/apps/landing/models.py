@@ -20,7 +20,7 @@ class GalleryImage(BaseTimeStampedModel):
         Gallery, related_name="images", on_delete=models.CASCADE
     )
     image = ImageField(
-        upload_to="images/",
+        upload_to="media/uploads/images/",
         formats={
             "thumb": ["default", ("crop", (400, 300))],
         },
