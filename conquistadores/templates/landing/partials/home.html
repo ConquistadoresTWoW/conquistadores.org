@@ -6,21 +6,21 @@
     <div class="row">
       <div class="col-lg-8 mx-auto fade-in">
         <h1 class="display-2 fw-bold mb-4 text-shadow pirate-title"
-            style="color: var(--wow-gold)">CONQUISTADORES</h1>
+            style="color: var(--wow-gold)">{{ guild.name|upper }}</h1>
         <p class="lead mb-4 fs-3 pirate-subtitle text-wow-cream">
-          <span class="spanish-accent">Hermandad Pirata</span> • Turtle WoW Europe (Nordanaar) 
+          <span class="spanish-accent">{{ guild.description }}</span> • {{ guild.server }} 
         </p>
         <p class="mb-5 fs-5 text-wow-cream">
-          <em>"Navegamos los mares de Azeroth en busca de gloria y tesoros. ¡Únete a nuestra tripulación!"</em>
+          <em>{{ guild.slogan }}</em>
         </p>
         <div class="d-flex gap-3 justify-content-center flex-wrap">
           <a href="#recruitment"
              class="btn btn-wow-primary btn-lg px-4 py-2 ship-decoration glow-green">
             <i data-lucide="users" class="me-2"></i>
-            ¡Únete a la Tripulación!
+            {% translate "¡Únete a la Tripulación!" %}
           </a>
           <a href="#about"
-             class="btn btn-wow-secondary btn-lg px-4 py-2 glow-orange">Conoce Nuestra Historia</a>
+             class="btn btn-wow-secondary btn-lg px-4 py-2 glow-orange">{% translate "Conoce Nuestra Historia" %}</a>
         </div>
       </div>
     </div>

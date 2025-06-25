@@ -1,7 +1,7 @@
 {% load static i18n %}
 <section id="rules" class="py-5 bg-wow-dark text-wow-cream">
   <div class="container">
-    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">📜 Código Pirata 📜</h2>
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">📜 {% trans "Código de Conquistadores" %} 📜</h2>
     <div class="row">
       <div class="col-lg-8 mx-auto fade-in">
         <div class="accordion" id="rulesAccordion">
@@ -10,15 +10,13 @@
               <button class="accordion-button pirate-subtitle"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapse1">Honor Entre Ladrones</button>
+                      data-bs-target="#collapse1">{% translate "Honor Entre Conquistadores" %}</button>
             </h2>
             <div id="collapse1"
                  class="accordion-collapse collapse show"
                  data-bs-parent="#rulesAccordion">
               <div class="accordion-body">
-                Todo <strong>Conquistador</strong> debe comportarse con honor hacia sus compañeros de tripulación.
-                No toleramos el acoso, la discriminación o comportamientos tóxicos.
-                Mantenemos un ambiente de <em>respeto mutuo</em> y camaradería pirata.
+                {{ rules.honor|safe }}
               </div>
             </div>
           </div>
@@ -27,15 +25,13 @@
               <button class="accordion-button collapsed pirate-subtitle"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapse2">Compromiso de Expedición</button>
+                      data-bs-target="#collapse2">{% translate "Compromiso de Expedición" %}</button>
             </h2>
             <div id="collapse2"
                  class="accordion-collapse collapse"
                  data-bs-parent="#rulesAccordion">
               <div class="accordion-body">
-                Los piratas deben mantener al menos 85% de asistencia a las expediciones programadas.
-                Inscríbete con anticipación y notifica a los oficiales sobre ausencias.
-                Ven preparado con <em>consumibles, reparaciones</em> y conocimiento de los encuentros.
+                {{ rules.commitment|safe }}
               </div>
             </div>
           </div>
@@ -44,15 +40,13 @@
               <button class="accordion-button collapsed pirate-subtitle"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapse3">Comunicación de la Tripulación</button>
+                      data-bs-target="#collapse3">{% translate "Comunicación de la Tripulación" %}</button>
             </h2>
             <div id="collapse3"
                  class="accordion-collapse collapse"
                  data-bs-parent="#rulesAccordion">
               <div class="accordion-body">
-                Discord es <strong>obligatorio</strong> para todas las actividades de la hermandad.
-                Mantén comunicación clara durante las expediciones y sigue las instrucciones del capitán.
-                Usa los canales apropiados y mantén los canales de voz despejados durante los combates.
+                {{ rules.communication|safe }}
               </div>
             </div>
           </div>
@@ -61,16 +55,13 @@
               <button class="accordion-button collapsed pirate-subtitle"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapse4">Reparto del Botín</button>
+                      data-bs-target="#collapse4">{% translate "Reparto del Botín" %}</button>
             </h2>
             <div id="collapse4"
                  class="accordion-collapse collapse"
                  data-bs-parent="#rulesAccordion">
               <div class="accordion-body">
-                Sigue nuestro sistema de DKP con <em>honor e integridad</em>.
-                No se tolera el robo de botín o dramas relacionados.
-                Los oficiales tienen autoridad final en todas las decisiones de botín.
-                <strong>Especialización principal</strong> siempre tiene prioridad sobre secundaria.
+                {{ rules.loot|safe }}
               </div>
             </div>
           </div>

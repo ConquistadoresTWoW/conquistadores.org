@@ -1,0 +1,40 @@
+{% load static i18n %}
+<section id="contact" class="py-5 bg-wow-dark text-wow-cream">
+  <div class="container">
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">
+      📞 {% translate "Contacta a los Capitanes" %} 📞
+    </h2>
+    <div class="row">
+      <div class="col-lg-6 mb-4 fade-in">
+        <div class="card card-wow-dark h-100 border-wow-green treasure-box"
+             style="border-width: 3px">
+          <div class="card-body">
+            <h5 class="card-title text-wow-green mb-4 pirate-subtitle">{% translate "Comando de la Hermandad" %}</h5>
+            {{ guild.contact|safe }}
+            <div class="mb-3">
+              <strong class="text-wow-green">{% trans "Servidor:" %}</strong> {{ guild.server }}
+              <br>
+              <strong class="text-wow-green">{% trans "Región:" %}</strong> Europa
+              <br>
+              <strong class="text-wow-green">{% translate "Horarios de Expedición:" %}</strong> {{ guild.raid_times }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4 fade-in">
+        <div class="card card-wow-dark h-100 border-wow-green treasure-box"
+             style="border-width: 3px">
+          <div class="card-body">
+            <h5 class="card-title text-wow-green mb-4 pirate-subtitle">{% trans "Únete a Nuestra Tripulación" %}</h5>
+            <div class="d-grid gap-2">
+              <a href="{{ guild.discord }}" class="btn btn-wow-primary btn-lg ship-decoration glow-green">
+                <span class="me-2">💬</span>
+                {% trans "Discord" %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

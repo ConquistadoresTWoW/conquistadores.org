@@ -1,4 +1,12 @@
 {% extends "base.html" %}
+{% load static i18n %}
 {% block content %}
-	{% include 'landing/htmx/index.html' %}
-{% endblock %}
+    {% include "landing/partials/home.html" %}
+    {% include "landing/partials/about.html" %}
+    {% include "landing/partials/calendar.html" %}
+    {% include "landing/partials/gallery.html" %}
+    {% include "landing/partials/recruitment.html" %}
+    {% include "landing/partials/rules.html" %}
+    {% include "landing/partials/loot.html" %}
+    {% include "landing/partials/contact.html" %}
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% load static i18n %}
+<section id="gallery" class="py-5 bg-wow-dark text-wow-cream">
+  <div class="container">
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">📸 Galería de Conquistas 📸</h2>
+    <div class="row g-4">
+      {% for pic in gallery.images.all %}
+        <div class="col-lg-3 col-md-4 col-sm-6 fade-in">
+          <div class="card bg-transparent border-0 h-100">
+            <img src="{{ pic.image.url }}"
+                 class="gallery-img"
+                 alt="{{ pic.name }}"
+                 height="200"
+                 width="300">
+            <div class="card-body p-2 text-center">
+              <small class="text-wow-green fw-bold pirate-subtitle">{{ pic.name }}</small>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

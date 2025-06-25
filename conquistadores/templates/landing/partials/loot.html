@@ -1,0 +1,25 @@
+{% load static i18n %}
+<section id="loot" class="py-5 bg-wow-secondary text-wow-cream">
+  <div class="container">
+    <h2 class="display-4 fw-bold text-wow-green text-center mb-5 fade-in pirate-title">
+      💰 {% translate "Reparto del Botín" %} 💰
+    </h2>
+    <div class="row">
+      <div class="col-lg-8 mx-auto fade-in">
+        <div class="card border-wow-green treasure-box glow-green"
+             style="border-width: 4px">
+          <div class="card-header card-header-wow">
+            <h4 class="mb-0">{% translate "Sistema de Loot Mixto" %}</h4>
+          </div>
+          <div class="card-body">
+            <h5 class="text-wow-green mb-3 pirate-subtitle">¿Cómo Funciona el Sistema?</h5>
+            {{ loot.rules|safe }}
+            <div class="alert alert-wow mt-4" role="alert">
+              <strong>¡Importante!</strong> Queda terminantemente prohibido escribir al Master Looter (ML) en el transcurso de la Raid salvo necesidad mayor.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

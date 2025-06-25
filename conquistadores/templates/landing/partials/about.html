@@ -1,0 +1,44 @@
+{% load static i18n %}
+<section id="about" class="py-5 bg-wow-dark text-wow-cream">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4 fade-in">
+        <h2 class="display-4 fw-bold text-wow-green mb-4 pirate-title">{% translate "Nuestra Tripulación" %}</h2>
+        {{ guild.about|safe }}
+        <div class="row text-center">
+          <div class="col-md-4 mb-3">
+            <div class="card card-wow-dark h-100 treasure-box">
+              <div class="card-body">
+                <h3 class="text-wow-green">{{ guild.active_players }}+</h3>
+                <p class="mb-0">{% translate "Piratas Activos" %}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card card-wow-dark h-100 treasure-box">
+              <div class="card-body">
+                <h3 class="text-wow-green">{{ guild.actual_progress }}</h3>
+                <p class="mb-0">{% translate "Progreso Actual" %}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card card-wow-dark h-100 treasure-box">
+              <div class="card-body">
+                <h3 class="text-wow-green">6</h3>
+                <p class="mb-0">{% translate "Años Navegando" %}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in">
+        <img src="{{ guild.image }}"
+             alt="{{ guild.name }}"
+             class="img-fluid rounded shadow-lg floating"
+             height="400"
+             width="600">
+      </div>
+    </div>
+  </div>
+</section>
