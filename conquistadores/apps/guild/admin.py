@@ -7,8 +7,8 @@ from apps.guild.models import (
 )
 from django.contrib import admin
 
+admin.site.register(Guild)
 admin.site.register(WoWClass)
 admin.site.register(Recruitment)
 admin.site.register(Rules)
 admin.site.register(LootSystem)
-admin.site.register(Guild)
