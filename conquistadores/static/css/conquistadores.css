@@ -93,7 +93,9 @@
 }
 
 .nav-link.active::after {
-  content: '⚓';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 600;
+  content: "\f13d";
   position: absolute;
   bottom: -5px;
   left: 50%;
@@ -183,6 +185,12 @@
   color: var(--wow-cream);
   font-weight: bold;
   border-bottom: 3px solid var(--wow-gold);
+  font-family: 'Pirata One', cursive;
+}
+
+.card-header-wow-low {
+  background: linear-gradient(135deg, var(--wow-bright-orange) 0%, var(--wow-orange) 100%);
+  color: var(--wow-cream);
   font-family: 'Pirata One', cursive;
 }
 
@@ -362,11 +370,14 @@ section {
 }
 
 .treasure-box::before {
-  content: '💰';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 600;
+  content: "\f81d";
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 2rem;
+  color: var(--wow-gold);
   opacity: 0.3;
 }
 
@@ -375,7 +386,9 @@ section {
 }
 
 .ship-decoration::after {
-  content: '⚓';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 600;
+  content: "\f13d";
   position: absolute;
   top: -10px;
   right: -10px;
@@ -435,11 +448,19 @@ section {
   animation: float 3s ease-in-out infinite;
 }
 
-/* wow WoW inspired glow effects */
 .glow-green {
   box-shadow: 0 0 20px rgba(107, 142, 35, 0.3);
 }
 
 .glow-orange {
   box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+}
+
+.footer {
+  background: linear-gradient(135deg, var(--wow-darker) 0%, var(--wow-dark) 100%);
+  border-top: 4px solid var(--wow-bright-green)
+}
+
+.h1-gold {
+  color: var(--wow-gold);
 }
