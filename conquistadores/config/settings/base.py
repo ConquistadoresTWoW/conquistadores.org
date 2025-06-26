@@ -12,6 +12,7 @@ env = environ.Env(
     EMAIL_HOST_PASSWORD=(str, ""),
     EMAIL_USE_TLS=(bool, False),
     REDIS_URL=(str, None),
+    COOKIE=(str, ""),
 )
 SITE_ID = 1
 
@@ -287,3 +288,5 @@ CKEDITOR_5_CONFIGS = {
 }
 
 CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
+
+SECRET_KEY = env("COOKIE")
