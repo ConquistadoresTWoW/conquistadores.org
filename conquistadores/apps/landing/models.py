@@ -27,10 +27,10 @@ class GalleryImage(BaseTimeStampedModel):
         auto_add_fields=True,
     )
     name = models.CharField(verbose_name="Nombre", max_length=200, blank=True)
-    caption = models.CharField(
-        verbose_name="Descripción", max_length=200, blank=True
-    )
 
     class Meta:
         verbose_name = "Imagen"
         verbose_name_plural = "Imágenes"
+
+    def __str__(self):
+        return self.name
