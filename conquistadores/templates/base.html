@@ -1,12 +1,16 @@
 {% load i18n static %}
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="auto">
+<html lang="es" data-bs-theme="auto" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
+    <meta name="description" content="{{ guild.description }}" />
     <meta name="keywords" content="TurtleWoW, Vanilla, Guild, Hispanic">
+    <meta property="og:title" content="Conquistadores" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://conquistadores.org" />
+    <meta property="og:image" content="{% static "images/logo.png" %}" />
     <title>Conquistadores | {{ title }}</title>
     <link rel="icon" type="image/x-icon" href="{% static "images/favicon.ico" %}">
     <link rel="stylesheet"
