@@ -52,8 +52,7 @@ RUN apt-get update \
 
 USER conquistador
 
-ENV DEBUG="${DEBUG}" \
-  PYTHONUNBUFFERED="true" \
+ENV PYTHONUNBUFFERED="true" \
   PYTHONPATH="." \
   UV_PROJECT_ENVIRONMENT="/home/conquistador/.local" \
   PATH="${PATH}:/home/conquistador/.local/bin" \
