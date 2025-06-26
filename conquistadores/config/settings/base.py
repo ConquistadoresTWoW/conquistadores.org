@@ -4,8 +4,8 @@ from pathlib import Path
 import environ
 
 env = environ.Env(
-    ALLOWED_HOSTS=(list, []),
-    CSRF_TRUSTED_ORIGINS=(list, []),
+    SECRET_KEY=(str, ""),
+    ALLOWED_HOSTS=(str, []),
     EMAIL_HOST=(str, ""),
     EMAIL_PORT=(int, 25),
     EMAIL_HOST_USER=(str, ""),
@@ -18,6 +18,8 @@ SITE_ID = 1
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
 SECRET_KEY = env("SECRET_KEY")
+
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
 APPS_DIR = BASE_DIR / "apps"
 

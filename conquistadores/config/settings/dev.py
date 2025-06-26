@@ -2,8 +2,6 @@ from .base import *  # noqa: F403
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_HOST = env("EMAIL_HOST")  # noqa: F405
