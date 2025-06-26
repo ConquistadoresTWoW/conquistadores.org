@@ -17,7 +17,7 @@ jobs:
     - name: Login to GHCR
       uses: docker/login-action@v3
       with:
-        registry: ghcr.io/ConquistadoresTWoW
+        registry: ghcr.io/conquistadorestwow
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -26,5 +26,5 @@ jobs:
       with:
         push: true
         tags: |
-          ghcr.io/ConquistadoresTWoW/conquistadores.org:latest
-          ghcr.io/ConquistadoresTWoW/conquistadores.org:main
+          ghcr.io/conquistadorestwow/conquistadores.org:latest
+          ghcr.io/conquistadorestwow/conquistadores.org:main
