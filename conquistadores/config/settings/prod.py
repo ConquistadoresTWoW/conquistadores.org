@@ -2,6 +2,10 @@ from .base import *  # noqa
 
 DEBUG = False
 
+INSTALLED_APPS += [  # noqa
+    "whitenoise.runserver_nostatic",
+]
+
 MIDDLEWARE.insert(  # noqa
     1,
     "whitenoise.middleware.WhiteNoiseMiddleware",
