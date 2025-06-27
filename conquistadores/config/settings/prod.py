@@ -1,6 +1,6 @@
 from .base import *  # noqa
 
-DEBUG = False
+DEBUG = True
 
 THIRD_PARTY_APPS += [  # noqa
     "whitenoise.runserver_nostatic",
