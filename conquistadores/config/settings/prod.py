@@ -1,24 +1,26 @@
-from .base import *  # noqa
+from .base import *  # noqa: F403
 
 DEBUG = False
 
-INSTALLED_APPS += [  # noqa
-    "whitenoise.runserver_nostatic",
-]
-
-MIDDLEWARE.insert(  # noqa
+MIDDLEWARE.insert(  # noqa F405
     1,
     "whitenoise.middleware.WhiteNoiseMiddleware",
 )
 
-STATIC_URL = "static/"
-
 STORAGES.update(  # noqa: F405
     {
         "staticfiles": {
-            "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # noqa: E501
         },
     }
 )
 
-STATIC_ROOT = BASE_DIR / "static"  # noqa: F405
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # noqa: F405
+]
+
+STATIC_URL = "static/"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
+
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True
