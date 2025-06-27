@@ -6,11 +6,6 @@ import environ
 env = environ.Env(
     SECRET_KEY=(str, ""),
     ALLOWED_HOSTS=(str, []),
-    EMAIL_HOST=(str, ""),
-    EMAIL_PORT=(int, 25),
-    EMAIL_HOST_USER=(str, ""),
-    EMAIL_HOST_PASSWORD=(str, ""),
-    EMAIL_USE_TLS=(bool, False),
     REDIS_URL=(str, None),
     COOKIE=(str, ""),
 )
@@ -107,12 +102,19 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "static/"
-
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
