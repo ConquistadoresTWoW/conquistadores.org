@@ -5,7 +5,7 @@ import environ
 
 env = environ.Env(
     SECRET_KEY=(str, ""),
-    ALLOWED_HOSTS=(str, []),
+    ALLOWED_HOSTS=(str, ""),
     REDIS_URL=(str, None),
     COOKIE=(str, ""),
 )

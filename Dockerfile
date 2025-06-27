@@ -64,6 +64,4 @@ COPY --chown=conquistador:conquistador . .
 
 WORKDIR /app/conquistadores
 
-RUN python manage.py collectstatic --no-input
-
 EXPOSE 8000
