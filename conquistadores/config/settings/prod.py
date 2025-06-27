@@ -7,9 +7,7 @@ MIDDLEWARE.insert(  # noqa
     "whitenoise.middleware.WhiteNoiseMiddleware",
 )
 
-STATIC_ROOT = BASE_DIR / "static"  # noqa
-
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 
 STORAGES.update(  # noqa: F405
     {
@@ -18,3 +16,5 @@ STORAGES.update(  # noqa: F405
         },
     }
 )
+
+STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
