@@ -6,6 +6,7 @@ import environ
 env = environ.Env(
     SECRET_KEY=(str, ""),
     ALLOWED_HOSTS=(str, ""),
+    CSRF_TRUSTED_ORIGINS=(str, ""),
     REDIS_URL=(str, None),
     COOKIE=(str, ""),
 )
@@ -16,6 +17,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+
+CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS").split(",")
 
 APPS_DIR = BASE_DIR / "apps"
 
