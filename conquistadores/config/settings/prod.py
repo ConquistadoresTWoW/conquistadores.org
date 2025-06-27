@@ -17,4 +17,4 @@ STORAGES.update(  # noqa: F405
     }
 )
 
-STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
+STATIC_ROOT = BASE_DIR / "static"  # noqa: F405
