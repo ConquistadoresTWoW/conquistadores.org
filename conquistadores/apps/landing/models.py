@@ -4,8 +4,11 @@ from imagefield.fields import ImageField
 
 
 class Gallery(BaseModel):
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
+    name = models.CharField(
+        verbose_name="Nombre de la Galería de Imágenes",
+        max_length=100,
+        db_index=True,
+    )
 
     class Meta:
         verbose_name = "Galería de Imagen"

@@ -41,8 +41,8 @@ class Guild(BaseModel):
         return self.name
 
     class Meta:
-        verbose_name = "Información de la Guild"
-        verbose_name_plural = "Informaciones de la Guild"
+        verbose_name = "Info del Gremio"
+        verbose_name_plural = "Info del Gremio"
 
 
 class Recruitment(BaseModel):
@@ -53,7 +53,7 @@ class Recruitment(BaseModel):
 
     class Meta:
         verbose_name = "Reclutamiento"
-        verbose_name_plural = "Reclutamientos"
+        verbose_name_plural = "Reclutamiento"
 
 
 class WoWClass(BaseModel):
@@ -113,7 +113,7 @@ class LootSystem(BaseModel):
 
     class Meta:
         verbose_name = "Sistema de Loot"
-        verbose_name_plural = "Sistemas de Loot"
+        verbose_name_plural = "Sistema de Loot"
 
     def __str__(self):
         return "Sistema de Loot"
