@@ -136,11 +136,22 @@ JAZZMIN_SETTINGS = {
     "site_title": "Conquistadores Admin",
     "site_header": "Conquistadores",
     "site_brand": "Conquistadores",
-    "welcome_sign": "Welcome to Conquistadores Admin",
+    "welcome_sign": "Bienvenido al Panel de Administración",
     "copyright": f"Conquistadores {date.year}",
+    "hide_apps": ["auth"],
+    "order_with_respect_to": [
+        "guild",
+        "guild.guild",
+        "guild.lootsystem",
+        "guild.rules",
+        "landing",
+        "events",
+        "events.raids",
+        "events.events",
+    ],
 }
 
-JAZZMIN_UI_TWEAKS = {"theme": "flatly"}
+JAZZMIN_UI_TWEAKS = {"theme": "materia"}
 
 custom_color_palette = [
     {"color": "hsl(4, 90%, 58%)", "label": "Red"},
