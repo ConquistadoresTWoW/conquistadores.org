@@ -27,13 +27,6 @@ services:
       - db_data:/var/lib/postgresql/data
     env_file: .env
 
-  mailpit:
-    image: axllent/mailpit
-    container_name: conquistadores-mailserver
-    ports:
-      - 8025:8025
-    env_file: .env
-
   web:
     <<: *default-app
     image: conquistadores-web
