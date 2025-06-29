@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 from helpers.models import BaseModel
@@ -9,6 +11,7 @@ class Guild(BaseModel):
         verbose_name="Nombre", max_length=150, db_index=True
     )
     description = models.CharField(verbose_name="Descripción", max_length=50)
+    founded = models.DateField(verbose_name="Fundada", blank=True, null=True)
     image = ImageField(
         upload_to="media/uploads/images/",
         formats={
@@ -26,7 +29,6 @@ class Guild(BaseModel):
     actual_progress = models.CharField(
         verbose_name="Progreso Actual", max_length=150
     )
-    active_years = models.IntegerField(verbose_name="Años Activos", default=0)
     contact = CKEditor5Field(
         verbose_name="Contacto",
         blank=True,
@@ -34,6 +36,9 @@ class Guild(BaseModel):
     )
     raid_times = models.CharField(
         verbose_name="Horarios de Raid", max_length=150, blank=True, null=True
+    )
+    tags = models.CharField(
+        verbose_name="Etiquetas", max_length=250, blank=True, null=True
     )
     discord = models.URLField("URL de discord")
 
@@ -43,6 +48,18 @@ class Guild(BaseModel):
     class Meta:
         verbose_name = "Info del Gremio"
         verbose_name_plural = "Info del Gremio"
+
+    @property
+    def years_since(self):
+        if self.founded:
+            return date.today().year - self.founded.year
+        return None
+
+    @property
+    def tags_list(self):
+        return (
+            [tag.strip() for tag in self.tags.split(",")] if self.tags else []
+        )
 
 
 class Recruitment(BaseModel):
