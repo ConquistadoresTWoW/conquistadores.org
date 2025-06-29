@@ -8,7 +8,8 @@
         <img class="d-block mx-auto mb-4" src="{% static "images/logo.png" %}" alt="" width="100" height="100">
         <h1 class="display-2 fw-bold mb-4 text-shadow pirate-title h1-gold">{{ guild.name|upper }}</h1>
         <p class="lead mb-4 fs-3 pirate-subtitle text-wow-cream">
-          <span class="spanish-accent">{{ guild.description }}</span> • {{ guild.server }}
+          <span class="spanish-accent">{{ guild.description }}</span>
+          <span>{{ guild.server }}</span>
         </p>
         <p class="mb-5 fs-5 text-wow-cream">
           <em>{{ guild.slogan }}</em>

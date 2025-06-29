@@ -3,7 +3,9 @@
 {% block content %}
     {% include "landing/partials/home.html" %}
     {% include "landing/partials/about.html" %}
-    {% include "landing/partials/calendar.html" %}
+    {% if events %}
+        {% include "landing/partials/calendar.html" %}
+    {% endif %}
     {% include "landing/partials/gallery.html" %}
     {% include "landing/partials/recruitment.html" %}
     {% include "landing/partials/rules.html" %}
