@@ -19,6 +19,10 @@ STATICFILES_DIRS = [
 
 STATIC_URL = "static/"
 
+MEDIA_URL = "static/"
+
 STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
+
+MEDIA_ROOT = BASE_DIR / "media"  # noqa: F405
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = True
