@@ -19,7 +19,7 @@ STATICFILES_DIRS = [
 
 STATIC_URL = "static/"
 
-MEDIA_URL = "static/"
+MEDIA_URL = "media/"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
 
