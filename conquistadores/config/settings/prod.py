@@ -1,7 +1,5 @@
 from .base import *  # noqa: F403
 
-DEBUG = False
-
 MIDDLEWARE.insert(  # noqa F405
     1,
     "whitenoise.middleware.WhiteNoiseMiddleware",

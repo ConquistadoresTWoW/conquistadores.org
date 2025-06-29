@@ -1,7 +1,5 @@
 from .base import *  # noqa: F403
 
-DEBUG = True
-
 INSTALLED_APPS.insert(  # noqa: F405
     0,
     "whitenoise.runserver_nostatic",

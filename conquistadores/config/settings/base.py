@@ -4,15 +4,19 @@ from pathlib import Path
 import environ
 
 env = environ.Env(
+    DEBUG=(bool, True),
     SECRET_KEY=(str, ""),
     ALLOWED_HOSTS=(str, ""),
     CSRF_TRUSTED_ORIGINS=(str, ""),
     REDIS_URL=(str, None),
     COOKIE=(str, ""),
 )
+
 SITE_ID = 1
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
+
+DEBUG = env("DEBUG", default=True)
 
 SECRET_KEY = env("SECRET_KEY")
 
