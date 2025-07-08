@@ -108,10 +108,10 @@ class WoWClass(BaseModel):
 
 
 class Rules(BaseModel):
-    honor = CKEditor5Field(verbose_name="Código de Honor", max_length=250)
-    commitment = CKEditor5Field(verbose_name="Compromiso", max_length=250)
-    communication = CKEditor5Field(verbose_name="Comunicación", max_length=250)
-    loot = CKEditor5Field(verbose_name="Botín", max_length=250)
+    honor = CKEditor5Field(verbose_name="Código de Honor")
+    commitment = CKEditor5Field(verbose_name="Compromiso")
+    communication = CKEditor5Field(verbose_name="Comunicación")
+    loot = CKEditor5Field(verbose_name="Botín")
 
     class Meta:
         verbose_name = "Regla"
