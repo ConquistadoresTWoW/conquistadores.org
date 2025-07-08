@@ -6,9 +6,11 @@
         <h2 class="display-4 fw-bold text-wow-green mb-4 pirate-title">
           <i class="fa-solid fa-skull-crossbones me-2"></i> {% translate "Reclutamiento" %} <i class="fa-solid fa-skull-crossbones me-2"></i>
         </h2>
-        <p class="lead mb-5">
+        <p class="lead">
           {% translate "¿Tienes lo necesario para navegar con los" %} <span class="spanish-accent">Conquistadores</span>?
-          {% translate "Buscamos valientes conquistadores para unirse a nuestra tripulación legendaria." %}
+        </p>
+        <p>
+          {% translate "Se busca carne de cañón con talentos específicos. Si tienes pulgares y puedes pulsar al menos tres botones, ¡eres bienvenido en nuestra tripulación legendaria! (Se valorará no pisar el fuego)." %}
         </p>
       </div>
     </div>
@@ -26,7 +28,9 @@
               </div>
               <div class="col-md-9">
                 <div class="card-body">
-                  <h5 class="card-title">{{ class.name }} <span class="float-end badge rounded-pill {% if class.priority == "H" %}text-bg-danger{% else %}text-bg-success{% endif %} ">{{ class.get_priority_display }}</span></h5>
+                  <h5 class="card-title">
+                    {{ class.name }} <span class="float-end badge rounded-pill {% if class.priority == "H" %}text-bg-danger{% else %}text-bg-success{% endif %} ">{{ class.get_priority_display }}</span>
+                  </h5>
                 </div>
               </div>
             </div>
