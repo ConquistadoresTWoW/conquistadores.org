@@ -21,7 +21,7 @@ STATIC_URL = "static/"
 
 MEDIA_URL = "media/"
 
-STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
+STATIC_ROOT = env("STATIC_ROOT", default=BASE_DIR / "staticfiles")  # noqa: F405
 
 MEDIA_ROOT = BASE_DIR / "media"  # noqa: F405
 

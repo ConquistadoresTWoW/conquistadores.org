@@ -30,6 +30,6 @@ STATICFILES_DIRS = [
 
 STATIC_URL = "static/"
 
-STATIC_ROOT = BASE_DIR / "staticfiles"  # noqa: F405
+STATIC_ROOT = env("STATIC_ROOT", default=BASE_DIR / "staticfiles")  # noqa: F405
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = True
