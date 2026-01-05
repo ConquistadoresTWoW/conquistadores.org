@@ -1,7 +1,8 @@
 import logging
+from datetime import date, datetime, timezone
 
 import httpx
-from apps.events.models import Events, Raids
+from apps.events.models import Events
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 from django.conf import settings
@@ -12,56 +13,41 @@ from django_apscheduler.models import DjangoJobExecution
 
 logger = logging.getLogger(__name__)
 
-EVENTS_URL = "https://raidres.fly.dev/api/events"
-RAIDS_URL = "https://raidres.fly.dev/raids/raids.json"
-COOKIE = settings.COOKIE
-
-
-def fetch_raids():
-    headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",  # noqa: E501
-    }
-
-    with httpx.Client() as client:
-        resp = client.get(RAIDS_URL, headers=headers)
-        resp.raise_for_status()
-        raids = resp.json()
-        for raid in raids:
-            _, _ = Raids.objects.update_or_create(
-                reference=raid["reference"],
-                name=raid["name"],
-                defaults={
-                    "raid_id": raid["id"],
-                    "max_attendance": raid["maxAttendance"],
-                },
-            )
+today = date.today()
+start_of_today_dt = datetime.combine(
+    today, datetime.min.time(), tzinfo=timezone.utc
+)
+start_of_today_epoch = int(start_of_today_dt.timestamp())
 
 
 def fetch_events():
     headers = {
-        "Cookie": COOKIE,
+        "Authorization": settings.RH_API_KEY,
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",  # noqa: E501
     }
 
     with httpx.Client() as client:
-        resp = client.get(EVENTS_URL, headers=headers)
+        resp = client.get(
+            f"https://raid-helper.dev/api/v3/servers/{settings.SERVER_ID}/events",
+            headers=headers,
+        )
         resp.raise_for_status()
-        events = resp.json()
-        for event in events:
+        events = resp.json()["postedEvents"]
+        upcoming_events = [
+            e for e in events if e["startTime"] >= start_of_today_epoch
+        ]
+        for event in upcoming_events:
             _, _ = Events.objects.update_or_create(
                 event_id=event["id"],
-                reference=event["reference"],
+                title=event["title"],
                 defaults={
-                    "raid_id": Raids.objects.filter(
-                        raid_id=event["raidId"]
-                    ).first(),
-                    "description": event["description"],
-                    "start_time": event["startTime"],
-                    "lock_at_start_time": event["lockAtStartTime"],
-                    "locked": event["locked"],
-                    "reservation_limit": event["reservationLimit"],
-                    "allow_comments": event["allowComments"],
-                    "signups": event["signups"],
+                    "leader": event["leaderName"],
+                    "image": event["imageUrl"],
+                    "start": datetime.fromtimestamp(
+                        event["startTime"], tz=timezone.utc
+                    ),
+                    "attendees": event["signUpCount"],
+                    "discord_channel_id": event["channelId"],
                 },
             )
 
@@ -77,15 +63,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         scheduler = BlockingScheduler(timezone=settings.TIME_ZONE)
         scheduler.add_jobstore(DjangoJobStore(), "default")
-
-        scheduler.add_job(
-            fetch_raids,
-            trigger=CronTrigger(day="*/1"),
-            id="fetch_raids",
-            max_instances=1,
-            replace_existing=True,
-        )
-        logger.info("Added job 'fetch_raids'.")
 
         scheduler.add_job(
             fetch_events,
