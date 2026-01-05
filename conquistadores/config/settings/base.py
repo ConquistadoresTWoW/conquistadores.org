@@ -9,7 +9,8 @@ env = environ.Env(
     ALLOWED_HOSTS=(str, ""),
     CSRF_TRUSTED_ORIGINS=(str, ""),
     REDIS_URL=(str, None),
-    COOKIE=(str, ""),
+    SERVER_ID=(str, ""),
+    RH_API_KEY=(str, ""),
 )
 
 SITE_ID = 1
@@ -306,4 +307,6 @@ CKEDITOR_5_CONFIGS = {
 
 CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
 
-COOKIE = env("COOKIE")
+SERVER_ID = env("SERVER_ID")
+
+RH_API_KEY = env("RH_API_KEY")
