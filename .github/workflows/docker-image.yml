@@ -17,7 +17,7 @@ jobs:
       id-token: write
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
     
@@ -35,3 +35,5 @@ jobs:
         tags: |
           ghcr.io/conquistadorestwow/conquistadores.org:latest
           ghcr.io/conquistadorestwow/conquistadores.org:main
+        cache-from: type=registry,ref=ghcr.io/conquistadorestwow/conquistadores.org:latest
+        cache-to: type=inline
