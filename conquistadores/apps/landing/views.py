@@ -16,9 +16,7 @@ class IndexView(TemplateView):
             {
                 "title": "Inicio",
                 "guild": Guild.objects.last(),
-                "events": Events.objects.filter(
-                    start_time__gte=timezone.now()
-                ),
+                "events": Events.objects.filter(start__gte=timezone.now()),
                 "gallery": Gallery.objects.last(),
                 "recruitment": Recruitment.objects.last(),
                 "rules": Rules.objects.last(),
