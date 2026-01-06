@@ -9,6 +9,7 @@ env = environ.Env(
     ALLOWED_HOSTS=(str, ""),
     CSRF_TRUSTED_ORIGINS=(str, ""),
     STATIC_ROOT=(str, ""),
+    MEDIA_ROOT=(str, ""),
     REDIS_URL=(str, None),
     SERVER_ID=(str, ""),
     RH_API_KEY=(str, ""),
