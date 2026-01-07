@@ -21,5 +21,4 @@ class Events(BaseTimeStampedModel):
         ordering = ["start"]
 
     def __str__(self):
-        if self.title:
-            return self.title
+        return self.title or "Sin título"
